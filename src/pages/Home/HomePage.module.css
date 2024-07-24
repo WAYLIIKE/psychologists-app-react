@@ -7,3 +7,10 @@
   );
   height: 100vh;
 }
+
+.contentWrapper {
+  display: flex;
+  align-items: center;
+  gap: 125px;
+  margin-top: 78px;
+}

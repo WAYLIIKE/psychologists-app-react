@@ -14,7 +14,15 @@
   color: var(--color-green);
 }
 
+.active {
+  position: relative;
+}
+
 .active::after {
+  position: absolute;
+  bottom: -12px;
+  right: 50%;
+  transform: translate(50%);
   content: '';
   display: block;
   height: 8px;

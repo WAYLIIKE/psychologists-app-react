@@ -3,6 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { Container } from '../../components/Container/Container';
 
 import css from './HomePage.module.css';
+import { HomeContent } from '../../components/HomeContent/HomeContent';
+import { HomeImage } from '../../components/HomeImage/HomeImage';
 
 export default function HomePage() {
   return (
@@ -11,7 +13,12 @@ export default function HomePage() {
         <title>Home | Psychologists.Services</title>
       </Helmet>
       <NavBar />
-      <Container></Container>
+      <Container>
+        <div className={css.contentWrapper}>
+          <HomeContent />
+          <HomeImage />
+        </div>
+      </Container>
     </div>
   );
 }
