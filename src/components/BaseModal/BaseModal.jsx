@@ -1,7 +1,8 @@
-import css from './BaseModal.module.css';
 import Modal from 'react-modal';
-import { Icon } from '../Icon/Icon';
 import { useEffect } from 'react';
+import { CgClose } from 'react-icons/cg';
+
+import css from './BaseModal.module.css';
 
 export const BaseModal = ({ isOpen, onClose, children }) => {
   useEffect(() => {
@@ -21,15 +22,8 @@ export const BaseModal = ({ isOpen, onClose, children }) => {
       ariaHideApp={false}
       overlayClassName={css.overlay}
     >
-      <div onClick={() => onClose()}>
-        <Icon
-          id={'icon-close'}
-          width={32}
-          height={32}
-          fill="none"
-          stroke="currentColor"
-          isCloseStyled={true}
-        />
+      <div onClick={() => onClose()} className={css.iconWrapper}>
+        <CgClose size={32} className={css.icon} />
       </div>
       {children}
     </Modal>

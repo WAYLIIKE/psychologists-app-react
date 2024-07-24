@@ -1,0 +1,16 @@
+.container {
+  max-width: 438px;
+}
+
+.container h1 {
+  margin-bottom: 20px;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+.container p {
+  color: rgba(25, 26, 21, 0.5);
+  line-height: 1.25;
+}
