@@ -1,1 +1,0 @@
-import{j as s,H as e}from"./index-054878a9.js";import{N as n,C as t}from"./NavBar-75f4d83b.js";const a="_container_1i1aa_1",o={container:a};function c(){return s.jsxs("div",{className:o.container,children:[s.jsx(e,{children:s.jsx("title",{children:"Home | Psychologists.Services"})}),s.jsx(n,{}),s.jsx(t,{})]})}export{c as default};
