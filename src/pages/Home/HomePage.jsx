@@ -1,8 +1,8 @@
 import { NavBar } from '../../components/NavBar/NavBar';
 import { Helmet } from 'react-helmet-async';
+import { Container } from '../../components/Container/Container';
 
 import css from './HomePage.module.css';
-import { Container } from '../../components/Container/Container';
 
 export default function HomePage() {
   return (
@@ -10,9 +10,8 @@ export default function HomePage() {
       <Helmet>
         <title>Home | Psychologists.Services</title>
       </Helmet>
-      <Container>
-        <NavBar />
-      </Container>
+      <NavBar />
+      <Container></Container>
     </div>
   );
 }
