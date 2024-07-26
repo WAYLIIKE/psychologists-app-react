@@ -6,6 +6,8 @@ import * as yup from 'yup';
 
 import css from './RegisterModal.module.css';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { signUp } from '../../redux/auth/authOps';
 
 const schema = yup
   .object({
@@ -17,6 +19,7 @@ const schema = yup
 
 export const RegisterModal = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const dispatch = useDispatch();
 
   const {
     register,
@@ -26,7 +29,7 @@ export const RegisterModal = () => {
     resolver: yupResolver(schema),
   });
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => dispatch(signUp(data));
 
   return (
     <div className={css.container}>

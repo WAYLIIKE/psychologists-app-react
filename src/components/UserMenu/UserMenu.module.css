@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+}
+
+.linkText {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.16px;
+}
+
+.button {
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.16px;
+  padding: 14px 39px;
+  border-radius: 30px;
+  border: 1px solid rgba(25, 26, 21, 0.2);
+  background: transparent;
+  transition: var(--animation);
+}
+
+.button:hover {
+  border: 1px solid var(--color-green);
+}

@@ -1,8 +1,10 @@
 import { NavLink, useMatch } from 'react-router-dom';
 import css from './NavLinks.module.css';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/selectors';
 
 export const NavLinks = () => {
-  const isRegistred = false;
+  const isLoggedIn = useSelector(selectUser);
 
   const homeMatch = useMatch('/');
   const psychologistsMatch = useMatch('/psychologists');
@@ -19,7 +21,7 @@ export const NavLinks = () => {
       >
         Psychologists
       </NavLink>
-      {isRegistred && (
+      {isLoggedIn && (
         <NavLink
           to="/favorites"
           className={favoritesMatch ? css.active : css.link}
