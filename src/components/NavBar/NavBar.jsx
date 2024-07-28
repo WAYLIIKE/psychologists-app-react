@@ -30,7 +30,7 @@ export const NavBar = () => {
               backgroundColor="#f3f3f3"
               foregroundColor="#ecebeb"
             >
-              <rect x="78" y="8" rx="3" ry="3" width="100%" height="100%" />
+              <rect x="78" y="8" rx="20" ry="20" width="50%" height="90%" />
             </ContentLoader>
           ) : isLoggedIn ? (
             <UserMenu />
