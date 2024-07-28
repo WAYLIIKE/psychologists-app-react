@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserName } from '../../redux/selectors';
 import { NavLink } from 'react-router-dom';
+import { logOut } from '../../redux/auth/authOps';
+import { FaUserLarge } from 'react-icons/fa6';
 
 import css from './UserMenu.module.css';
-import { logOut } from '../../redux/auth/authOps';
 
 export const UserMenu = () => {
   const userName = useSelector(selectUserName);
@@ -11,7 +12,10 @@ export const UserMenu = () => {
 
   return (
     <div className={css.container}>
-      <NavLink>
+      <NavLink className={css.link}>
+        <div className={css.div}>
+          <FaUserLarge color="var(--color-white)" />
+        </div>
         <span className={css.linkText}>{userName}</span>
       </NavLink>
       <button

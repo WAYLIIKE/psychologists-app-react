@@ -2,13 +2,12 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { FiEye } from 'react-icons/fi';
 import { FiEyeOff } from 'react-icons/fi';
-
 import * as yup from 'yup';
-
-import css from './LoginModal.module.css';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { signIn } from '../../redux/auth/authOps';
+
+import css from './LoginModal.module.css';
 
 const schema = yup
   .object({

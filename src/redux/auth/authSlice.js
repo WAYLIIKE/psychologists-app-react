@@ -3,10 +3,13 @@ import { logOut, signIn, signUp } from './authOps';
 
 const authSlice = createSlice({
   name: 'auth',
-  initialState: { loading: null, user: null, isLoggedIn: false },
+  initialState: { loading: true, user: null, isLoggedIn: false },
   reducers: {
     loginUser: (state, action) => {
       state.user = action.payload;
+    },
+    setLoading: (state, action) => {
+      state.loading = action.payload;
     },
   },
   extraReducers: (builder) =>
@@ -41,4 +44,4 @@ const authSlice = createSlice({
 
 export const authReducer = authSlice.reducer;
 
-export const { loginUser } = authSlice.actions;
+export const { loginUser, setLoading } = authSlice.actions;

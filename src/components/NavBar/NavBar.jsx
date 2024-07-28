@@ -3,13 +3,15 @@ import { Container } from '../Container/Container';
 import { Logo } from '../Logo/Logo';
 import { NavLinks } from '../NavLinks/NavLinks';
 import { NavLog } from '../NavLog/NavLog';
+import { selectLoading, selectUser } from '../../redux/selectors';
+import { UserMenu } from '../UserMenu/UserMenu';
+import ContentLoader from 'react-content-loader';
 
 import css from './NavBar.module.css';
-import { selectUser } from '../../redux/selectors';
-import { UserMenu } from '../UserMenu/UserMenu';
 
 export const NavBar = () => {
   const isLoggedIn = useSelector(selectUser);
+  const isLoading = useSelector(selectLoading);
 
   return (
     <div className={css.navBar}>
@@ -19,7 +21,22 @@ export const NavBar = () => {
             <Logo />
             <NavLinks />
           </nav>
-          {isLoggedIn ? <UserMenu /> : <NavLog />}
+          {isLoading ? (
+            <ContentLoader
+              speed={2}
+              width={400}
+              height={48}
+              viewBox="0 0 400 160"
+              backgroundColor="#f3f3f3"
+              foregroundColor="#ecebeb"
+            >
+              <rect x="78" y="8" rx="3" ry="3" width="100%" height="100%" />
+            </ContentLoader>
+          ) : isLoggedIn ? (
+            <UserMenu />
+          ) : (
+            <NavLog />
+          )}
         </header>
       </Container>
       <div className={css.div}></div>
