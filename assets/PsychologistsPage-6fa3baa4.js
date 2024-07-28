@@ -1,1 +1,0 @@
-import{j as s,H as t}from"./index-6a7a9cca.js";import{N as e,a as i}from"./NavBar-8e9c4faa.js";function a(){return s.jsxs("div",{children:[s.jsx(t,{children:s.jsx("title",{children:"Psychologists | Psychologists.Services"})}),s.jsx(e,{}),s.jsx(i,{})]})}export{a as default};
