@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { logOut, signIn, signUp } from './authOps';
+import toast from 'react-hot-toast';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -21,7 +22,29 @@ const authSlice = createSlice({
         state.loading = false;
         state.isLoggedIn = true;
         state.user = action.payload.user;
-        console.log(action.payload);
+      })
+      .addCase(signUp.rejected, (state, action) => {
+        state.loading = false;
+        if (action.payload === 'Firebase: Error (auth/email-already-in-use).') {
+          return toast(`Email already in use`, {
+            icon: '❌',
+            style: {
+              borderRadius: '10px',
+              background: '#333',
+              color: '#fff',
+              marginTop: '100px',
+            },
+          });
+        }
+        toast(`${action.payload}`, {
+          icon: '❌',
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+            marginTop: '100px',
+          },
+        });
       })
       .addCase(signIn.pending, (state) => {
         state.loading = true;
@@ -30,7 +53,27 @@ const authSlice = createSlice({
         state.loading = false;
         state.isLoggedIn = true;
         state.user = action.payload.user;
-        console.log(action.payload);
+        toast(`Welcome back, ${action.payload.user.displayName}!`, {
+          icon: '👏',
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+            marginTop: '100px',
+          },
+        });
+      })
+      .addCase(signIn.rejected, (state) => {
+        state.loading = false;
+        toast(`Email or password wrong`, {
+          icon: '❌',
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+            marginTop: '100px',
+          },
+        });
       })
       .addCase(logOut.pending, (state) => {
         state.loading = true;
@@ -39,6 +82,18 @@ const authSlice = createSlice({
         state.loading = false;
         state.isLoggedIn = false;
         state.user = null;
+      })
+      .addCase(logOut.rejected, (state, action) => {
+        state.loading = false;
+        toast(`${action.payload}`, {
+          icon: '❌',
+          style: {
+            borderRadius: '10px',
+            background: '#333',
+            color: '#fff',
+            marginTop: '100px',
+          },
+        });
       }),
 });
 

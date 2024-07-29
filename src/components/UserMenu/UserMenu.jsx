@@ -12,7 +12,7 @@ export const UserMenu = () => {
 
   return (
     <div className={css.container}>
-      <NavLink className={css.link}>
+      <NavLink className={css.link} to="/account">
         <div className={css.div}>
           <FaUserLarge color="var(--color-white)" />
         </div>

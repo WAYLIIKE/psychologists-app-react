@@ -44,8 +44,6 @@ export const signIn = createAsyncThunk(
         signUpData.password
       );
 
-      console.log(userCredential);
-
       return userCredential;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
