@@ -3,6 +3,7 @@
 import { Helmet } from 'react-helmet-async';
 import { Container } from '../../components/Container/Container';
 import { NavBar } from '../../components/NavBar/NavBar';
+import { Favorites } from '../../components/Favorites/Favorites';
 
 export default function FavoritesPage() {
   return (
@@ -11,7 +12,9 @@ export default function FavoritesPage() {
         <title>Favorites | Psychologists.Services</title>
       </Helmet>
       <NavBar />
-      <Container></Container>
+      <Container>
+        <Favorites />
+      </Container>
     </div>
   );
 }
