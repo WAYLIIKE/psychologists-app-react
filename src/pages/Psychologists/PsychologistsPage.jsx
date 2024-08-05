@@ -11,9 +11,9 @@ import { Psychologies } from '../../components/Psychologies/Psychologies';
 export default function PsychologistsPage() {
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchPsychol());
-  // });
+  useEffect(() => {
+    dispatch(fetchPsychol({ startAt: 0, limit: 3 }));
+  });
 
   return (
     <div>

@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchPsychol } from './psychologiesOps';
 
-const psycholSlice = createSlice({
-  name: 'psychol',
+const psychologiesSlice = createSlice({
+  name: 'psychologies',
   initialState: { psychologies: [], loading: true },
   extraReducers: (builder) =>
     builder
@@ -11,12 +11,14 @@ const psycholSlice = createSlice({
       })
       .addCase(fetchPsychol.fulfilled, (state, action) => {
         state.loading = false;
-        console.log('Psychologies fetched:', action.payload.data);
-        // state.psychol = action.payload;
+
+        state.psychologies = action.payload
+          ? Object.values(action.payload).filter((item) => item !== null)
+          : [];
       })
       .addCase(fetchPsychol.rejected, (state) => {
         state.loading = false;
       }),
 });
 
-export const psycholReducer = psycholSlice.reducer;
+export const psychologiesReducer = psychologiesSlice.reducer;

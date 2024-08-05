@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { authReducer } from './auth/authSlice';
-import { psycholReducer } from './psychologies/psychologiesSlice';
+import { psychologiesReducer } from './psychologies/psychologiesSlice';
 
 export const store = configureStore({
-  reducer: { auth: authReducer, psychologies: psycholReducer },
+  reducer: { auth: authReducer, psychologies: psychologiesReducer },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: false,

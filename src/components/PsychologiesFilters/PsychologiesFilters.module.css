@@ -1,5 +1,6 @@
 .container {
   max-width: 226px;
+  margin-bottom: 32px;
 }
 
 .filterTitle {
@@ -38,6 +39,7 @@
   border-radius: 14px;
   z-index: 99;
   margin-top: 8px;
+  box-shadow: 0px 20px 69px 0px rgba(0, 0, 0, 0.07);
 }
 
 .selectItem {
