@@ -65,4 +65,34 @@
 .advantages {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 4px;
+  margin-bottom: 24px;
+  max-width: 880px;
+}
+
+.advantagesItem {
+  border-radius: 24px;
+  background: var(--color-background);
+  padding: 8px 16px;
+  color: var(--color-gray);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.spanWord {
+  color: var(--color-black);
+}
+
+.about {
+  color: rgba(25, 26, 21, 0.5);
+  line-height: 1.25;
+}
+
+.readMore {
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  background: transparent;
+  margin-top: 14px;
 }

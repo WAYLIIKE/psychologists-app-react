@@ -4,6 +4,7 @@
   border: 2px solid rgba(84, 190, 150, 0.2);
   padding: 10px;
   max-width: 120px;
+  max-height: 120px;
 }
 
 .img {
