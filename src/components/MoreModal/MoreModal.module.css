@@ -1,0 +1,30 @@
+.container {
+  max-width: 472px;
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  margin-bottom: 20px;
+}
+
+.subTitle {
+  color: rgba(25, 26, 21, 0.5);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-bottom: 40px;
+}
+
+.mainBox {
+  display: flex;
+  gap: 14px;
+}
+
+.imgBox {
+  background-color: #e0e0e0;
+  border-radius: 15px;
+}

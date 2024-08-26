@@ -51,7 +51,7 @@ export const UserInfo = ({ item }) => {
       </ul>
       <p className={css.about}>{item.about}</p>
       {isReadMore ? (
-        <UserMore data={item.reviews} />
+        <UserMore data={item} />
       ) : (
         <button className={css.readMore} onClick={() => handleReadMoreClick()}>
           Read more
