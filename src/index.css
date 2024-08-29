@@ -79,11 +79,13 @@ button {
   outline: none;
 }
 
-input {
+input,
+textarea {
   border: none;
   outline: none;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
   color: var(--color-black);
 }

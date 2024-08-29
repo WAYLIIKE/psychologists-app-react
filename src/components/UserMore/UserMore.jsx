@@ -4,11 +4,28 @@ import { BaseModal } from '../BaseModal/BaseModal';
 import css from './UserMore.module.css';
 import { useState } from 'react';
 import { MoreModal } from '../MoreModal/MoreModal';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../../redux/selectors';
+import toast from 'react-hot-toast';
 
 export const UserMore = ({ data }) => {
   const [openModal, setOpenModal] = useState(false);
+  const isUser = useSelector(selectUser);
 
   const handleOpenModal = () => {
+    if (!isUser) {
+      return toast(`You should log in before making an appointment`, {
+        icon: '❌',
+        style: {
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+          marginTop: '100px',
+          textAlign: 'center',
+        },
+      });
+    }
+
     setOpenModal((prev) => {
       return !prev;
     });
@@ -37,7 +54,7 @@ export const UserMore = ({ data }) => {
         Make an appointment
       </button>
       <BaseModal isOpen={openModal} onClose={handleOpenModal}>
-        <MoreModal data={data} />
+        <MoreModal data={data} handleOpenModal={handleOpenModal} />
       </BaseModal>
     </div>
   );
