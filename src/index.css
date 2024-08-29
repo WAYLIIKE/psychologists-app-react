@@ -89,3 +89,39 @@ input::placeholder,
 textarea::placeholder {
   color: var(--color-black);
 }
+
+/* 
+/*  Scrollbar styles
+*/
+
+*::-webkit-scrollbar {
+  width: 8px;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+*::-webkit-scrollbar-track:hover,
+*::-webkit-scrollbar-thumb:focus {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 7px;
+  background: var(--color-green);
+  transition: background-color var(--animation);
+}
+
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:focus {
+  background-color: var(--color-hovergreen);
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-hovergreen);
+}
